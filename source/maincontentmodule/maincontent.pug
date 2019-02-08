@@ -1,0 +1,68 @@
+#maincontent
+    // box section
+    #box-section(itemscope='', itemtype='http://schema.org/NGO')
+      // Logo Line of Boxes
+      #line1.line-block.bottom-margin-line
+        svg#logo-g-box.box.right-margin-box
+          use.line1-color(xlink:href='#gne-logo-g')
+        svg#logo-n-box.box.right-margin-box
+          use.line1-color(xlink:href='#gne-logo-n')
+        svg#logo-e-box.box
+          use.line1-color(xlink:href='#gne-logo-e')
+      // Second Line of Boxes
+      #line2.line-block.bottom-margin-line
+        #full-name-box.box.line2-color.right-margin-box(tabindex='1', itemprop='name')
+          .content-margin
+            span.title Gesellschaft für nachhaltige Entwicklung (GNE)
+        #people-box.box.line2-color.right-margin-box(tabindex='2')
+          .content-margin
+            span.mtitle Vorstand
+            br
+            br
+            |                     Christopher Jaritz
+            br
+            |                     David Sachornig
+            br
+            |                     Christoph Peinhaupt
+            br
+            |                     Albert Unterberger
+            br
+            |                     Mag. Dr. Adriana Da
+            br
+            |                     Silva Ferro
+        #line2-empty-box.box.line2-color
+      // Third Line of Boxes
+      #line3.line-block(itemprop='address', itemscope='', itemtype='http://schema.org/PostalAddress')
+        #line3-empty-box.box.line3-color.right-margin-box
+        #contact-box.box.line3-color.right-margin-box(tabindex='3')
+          .content-margin
+            span.mtitle Kontakt
+            br
+            br
+            | St. Peter Haupstr. 31C
+            br
+            span(itemprop='postalCode') 8042
+            span(itemprop='addressLocality') Graz
+            br
+            a(href='mailto://office@gne.or.at', title='Unsere Mailadresse', itemprop='email') office@gne.or.at
+            br
+            a(href='tel://00436648442341', title='Unsere Telefonnummer') +43 664 844234 1
+            br
+            |                     ZVR-Nr.: 
+            a(href='/pdf/1462880848907.pdf', title='Vereinsregisterauszug im PDF-Format', target='_blank') 375623187
+        #banking-address-box.box.line3-color(tabindex='4')
+          .content-margin
+            span.mtitle Bankverbindung
+            br
+            br
+            |                     Raiffeisenbank 
+            br
+            |                     Graz-Mariatrost eGen
+            br
+            |                     IBAN: AT26 3822 
+            br
+            | 3000 0416 3556
+            br
+            |                     BIC: RZSTAT2G223
+            br
+    // end box section

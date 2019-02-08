@@ -1,0 +1,51 @@
+{
+  "name": "web-project-template",
+  "version": "0.0.3",
+  "description": "A basic Stub for all new Web Projects - already includes some useful modules.",
+  "scripts": {
+    "push": "synced-misfits/add-commit-push.sh",
+    "build-css": "stylus source/index/index.styl -o compiled/css/",
+    "watch-css": "stylus source/index/index.styl -o compiled/css/ -w",
+    "build-index-html": "pug -o website/ source/index/index.pug",
+    "watch-index-html": "pug -o website/ source/index/index.pug -w",
+    "build-modules-js": "coffee -o compiled/js/ -c source/*/*.coffee",
+    "watch-modules-js": "coffee -o compiled/js/ -cw source/*/*.coffee",
+    "bundle": "webpack-cli --config synced-misfits/webpack.config.js --display-error-details",
+    "bundle-watch": "webpack-cli --config synced-misfits/webpack-watch.config.js",
+    "build-js": "npm-run-all build-modules-js bundle",
+    "watch-js": "npm-run-all --parallel watch-modules-js bundle-watch",
+    "build-server-js": "coffee -o server/ -c server-source/",
+    "watch-server-js": "coffee  -o server/ -cw server-source/",
+    "watch-server": "nodemon server/server.js",
+    "build": "npm-run-all build-css build-js build-index-html build-server-js",
+    "watch": "npm-run-all --parallel watch-js watch-css watch-index-html watch-server-js watch-server",
+    "test": "npm-run-all build watch",
+    "copyscript": "synced-misfits/copyscript.sh",
+    "create-compile-folders": "synced-misfits/create-compile-folders.sh",
+    "initialize-project": "npm-run-all copyscript create-compile-folders build",
+    "minify": "html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true website/index.html --output website/index.html",
+    "check-minifier": "html-minifier --help"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JhonnyJason/web-project-template.git"
+  },
+  "author": "Lenard Frommelt",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/JhonnyJason/web-project-template/issues"
+  },
+  "homepage": "https://github.com/JhonnyJason/web-project-template#readme",
+  "dependencies": {
+    "coffeescript": "^2.3.1",
+    "express": "^4.16.3",
+    "gsap": "^2.0.1",
+    "html-minifier": "^3.5.21",
+    "nodemon": "^1.18.0",
+    "npm-run-all": "^4.1.3",
+    "pug-cli": "^1.0.0-alpha6",
+    "stylus": "^0.54.5",
+    "webpack": "^4.15.1",
+    "webpack-cli": "^3.0.8"
+  }
+}
